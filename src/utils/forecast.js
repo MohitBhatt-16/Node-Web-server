@@ -12,9 +12,11 @@ const forecast=(lattitude,longitude, callback)=>{
         else{
             const temp=response.body.current.temperature
             const feelliketemp=response.body.current.feelslike
+            const humidityintemp=response.body.current.humidity
             callback(undefined,{
                 temperature: temp,
-                feelslike: feelliketemp
+                feelslike: feelliketemp,
+                humidity: humidityintemp
             })
         }
 

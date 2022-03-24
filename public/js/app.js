@@ -22,9 +22,13 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageone = document.getElementById('message_one')
 const messagetwo = document.getElementById('message_two')
+const messagethree = document.getElementById('message_three')
+const messagefour = document.getElementById('message_four')
 
 messageone.textContent=''
 messagetwo.textContent=''
+messagethree.textContent=''
+messagefour.textContent=''
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -41,7 +45,10 @@ weatherForm.addEventListener('submit', (e) => {
             else {
                 messageone.textContent=data.location
                 // console.log(data.location)
-                messagetwo.textContent=data.forecast.temperature
+                messagetwo.textContent='It is currently'+data.forecast.temperature+'degrees out'
+                messagethree.textContent='It feels like'+data.forecast.feelslike+ 'degrees out'
+                messagefour.textContent='Humidity'+data.forecast.humidity
+
                 // console.log(data.forecast)
 
             }
